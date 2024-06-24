@@ -7,43 +7,49 @@
 <body>
   <nav>
     <div class="navBar">
-      <img src="lockup-new.svg"/>
+      <div id="navBar_img"><a href="/">
+        <img src="lockup-new.svg"/>
+      </a></div>
       <div class="bar">
         <div>產品</div>
         <div>解決方案</div>
         <div>事件</div>
         <div>更多選項</div>
       </div>
-      <input />
-      <div>中文-繁體</div>
-      <div>登入</div>
+      <input placeholder="搜尋結果"/>
+      <div id="language">中文 - 繁體</div>
+      <div id="login">登入</div>
     </div>
   </nav>
   <head>
-    <div class="devsite-banner">
-      <p>Build with Gemini, our largest and most capable AI model. <a class="gc-analytics-event" href="https://aistudio.google.com/app/prompts/new_chat/?utm_source=gfd&utm_medium=referral&utm_campaign=top_bar&hl=zh-tw">Get an API key.</a></p>
-    </div>
-    <div class="devsite-banner-message">
-      <div>
-        <img src="translated.svg" />
-        <span>本頁面由 <a href="//cloud.google.com/translate/?hl=zh-tw">Cloud Translation API</a> 翻譯而成</span>
+    <div id="scrollElement">
+      <div class="devsite-banner">
+        <p>Build with Gemini, our largest and most capable AI model. <a class="gc-analytics-event" href="https://aistudio.google.com/app/prompts/new_chat/?utm_source=gfd&utm_medium=referral&utm_campaign=top_bar&hl=zh-tw">Get an API key.</a></p>
       </div>
-      <div class="devsite-banner-switch">
-        <button>Switch to English</button>
+      <div class="devsite-banner-message">
+        <div>
+          <img src="translated.svg" />
+          <span>本頁面由 <a href="//cloud.google.com/translate/?hl=zh-tw">Cloud Translation API</a> 翻譯而成</span>
+        </div>
+        <div>
+          <a href="https://developers.google.com/"><button>Switch to English</button></a>
+        </div>
       </div>
-    </div>
-  
-    <div class="header-main">
-      <div>
-        <h1>重溫 2024 年 Google I/O 大會</h1>
-        <h2>
-          倒轉並重溫 2024 年 Google I/O 大會。主題演講和講座現已推出隨選影片。
-        </h2>
-        <a href="https://io.google/2024/?utm_source=devsite-hpp&utm_medium=embedded_marketing&utm_campaign=dgc-io-24&hl=zh-tw"><div>觀看隨選影片</div></a>
+      <div class="header-main">
+        <div>
+          <h1>重溫 2024 年 Google I/O 大會</h1>
+          <h2>
+            倒轉並重溫 2024 年 Google I/O 大會。主題演講和講座現已推出隨選影片。
+          </h2>
+          <a href="https://io.google/2024/?utm_source=devsite-hpp&utm_medium=embedded_marketing&utm_campaign=dgc-io-24&hl=zh-tw"><div>觀看隨選影片</div></a>
+        </div>
+        <img src="Google io 2024.jpg" />
       </div>
-      <img src="Google io 2024.jpg" />
     </div>
   </head>
+  <section>
+    <div id="blankSpace"></div>
+  </section>
   <section>
     <div>
       <p style="display: inline-block">選取要篩選的興趣類別</p>
@@ -395,4 +401,6 @@
       </div>
     </div>
   </footer>
+  <script src="w1a4.js"></script>
+
 </body>

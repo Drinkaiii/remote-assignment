@@ -2,29 +2,106 @@ body {
   font-family: "Google Sans", sans-serif;
 }
 
+/* navigator */
 .navBar {
-  display: flex;
-}
-.navBar img {
-  height: 32px;
-  margin-right: 10px;
-}
-.navBar .bar {
+  height: 48px;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 300px;
-  border: 1px solid #d2e3fc;
-  margin-right: 10px;
-  /* margin: 0px 20px 0px 20px; */
+}
+.navBar img {
+  height: 32px;
+}
+.navBar #navBar_img {
+  height: 32px;
+  margin: 0px 16px 0px 16px;
+  cursor: pointer;
+  flex: 2;
+  display: flex;
+  align-items: center;
+}
+.navBar .bar {
+  height: 36px;
+  margin: 0px 16px 0px 16px;
+  flex: 5 1 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 1050px) {
+  .navBar .bar {
+    display: none;
+  }
+}
+.navBar .bar div {
+  color: rgb(95, 99, 104);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.navBar input {
+  color: rgb(32, 33, 36);
+  font-size: 16px;
+  height: 32px;
+  background-color: rgb(242, 243, 245);
+  border-radius: 4px;
+  border: 0px solid #dadce0;
+  margin: 0px 16px 0px 16px;
+  cursor: pointer;
+  flex: 1;
+}
+.navBar #language {
+  height: 36px;
+  font-size: 14px;
+  margin: 0px 16px 0px 16px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 1 1 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navBar #login {
+  color: rgb(26, 115, 232);
+  width: 50px;
+  height: 36px;
+  margin: 0px 10px 0px 10px;
+  transition: transform 0.2s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navBar #login:hover {
+  background-color: rgb(232, 240, 254);
+  border-radius: 4px;
 }
 
+/* 主要 header */
+#scrollElement {
+  position: fixed;
+  margin-top: 40px;
+  left: 0%;
+  z-index: 1;
+  transition: transform 0.2s;
+}
+#blankSpace {
+  height: 250px;
+}
 .devsite-banner {
-  height: 65px;
-  color: rgb(255, 255, 255);
-  background-color: rgb(26, 115, 232);
   font-size: 16px;
-  font-weight: 500;
+  color: rgb(255, 255, 255);
+  height: 65px;
+  background-color: rgb(26, 115, 232);
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,14 +110,14 @@ body {
   color: rgb(48, 63, 159);
 }
 .devsite-banner-message {
-  height: 85px;
   font-size: 14px;
-  background-color: rgb(242, 243, 245);
   color: rgba(0, 0, 0, 0.65);
+  height: 85px;
+  background-color: rgb(242, 243, 245);
+  margin: 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0px;
 }
 .devsite-banner-message img {
   margin-right: 24px;
@@ -48,21 +125,21 @@ body {
 }
 .devsite-banner-message div {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
 }
 .devsite-banner-message button {
-  margin-right: 24px;
-  color: rgb(26, 115, 232);
-  background-color: white;
   font-size: 14px;
+  color: rgb(26, 115, 232);
   height: 36px;
   width: 159.617px;
   min-width: 36px;
-  cursor: pointer;
+  background-color: white;
   border-radius: 5px;
   box-shadow: none;
   border: 1px solid #dadce0;
+  margin-right: 24px;
+  cursor: pointer;
   transition-duration: 0.2s;
 }
 .devsite-banner-message button:hover {
