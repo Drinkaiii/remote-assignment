@@ -16,7 +16,8 @@
     <div id="root"></div>
     <!--因為沒有運行本地端伺服器，受制於瀏覽器CROS政策，無法使用外部JS檔案-->
     <script type="text/babel">
-      //預設不顯示下半部分
+      //預設設定
+      let isEditTtitle = false;
       let isActive = false;
       //預設 DOM 排列
       function WebUI() {
@@ -38,8 +39,10 @@
             </nav>
             <header>
               <div id="content">
-                <div id="welcomeMessage">
-                  <h1>Welcome Message</h1>
+                <div id="welcomeMessage" onClick={editTitle}>
+                  <h1>
+                    {isEditTtitle ? "Have a Good Time!" : "Welcome Message"}
+                  </h1>
                 </div>
                 <div id="sectionTtile">
                   <h2>Section Title</h2>
@@ -67,6 +70,10 @@
       //點擊按鈕時修改 isActive 並重新渲染
       function showMoreContent() {
         isActive = !isActive;
+        ReactDOM.render(<WebUI />, document.getElementById("root"));
+      }
+      function editTitle() {
+        isEditTtitle = !isEditTtitle;
         ReactDOM.render(<WebUI />, document.getElementById("root"));
       }
       //預設首次渲染畫面
