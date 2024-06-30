@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="cssStyle.css" />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!--因為沒有運行本地端伺服器，受制於瀏覽器CROS政策，無法使用外部JS檔案-->
+    <script type="text/babel">
+      //預設不顯示下半部分
+      let isActive = false;
+      //預設 DOM 排列
+      function WebUI() {
+        return (
+          <div className="jsx-container">
+            <nav>
+              <div id="navigatorBar">
+                <div>
+                  <div>網頁標題</div>
+                  <img src="logo.png" />
+                </div>
+                <div>
+                  <div className="item">item 1</div>
+                  <div className="item">item 2</div>
+                  <div className="item">item 3</div>
+                  <div className="item">item 4</div>
+                </div>
+              </div>
+            </nav>
+            <header>
+              <div id="content">
+                <div id="welcomeMessage">
+                  <h1>Welcome Message</h1>
+                </div>
+                <div id="sectionTtile">
+                  <h2>Section Title</h2>
+                </div>
+                <div id="mainContent">
+                  <div>Content Box 1</div>
+                  <div>Content Box 2</div>
+                  <div>Content Box 3</div>
+                  <div>Content Box 4</div>
+                </div>
+                <div id="CallToAction" onClick={showMoreContent}>
+                  Call to Action
+                </div>
+                <div id={isActive ? "moreContent" : "hideMoreContent"}>
+                  <div>Content Box 5</div>
+                  <div>Content Box 6</div>
+                  <div>Content Box 7</div>
+                  <div>Content Box 8</div>
+                </div>
+              </div>
+            </header>
+          </div>
+        );
+      }
+      //點擊按鈕時修改 isActive 並重新渲染
+      function showMoreContent() {
+        isActive = !isActive;
+        ReactDOM.render(<WebUI />, document.getElementById("root"));
+      }
+      //預設首次渲染畫面
+      ReactDOM.render(<WebUI />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
