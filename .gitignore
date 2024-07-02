@@ -1,2 +1,13 @@
-Week-1\Assignment-2\test.html
-Week-1\Assignment-2\test.css
+#other
+Week-1/Assignment-2/test.html
+Week-1/Assignment-2/test.css
+
+#maven
+week-3/assignment/target/
+week-3/assignment/mvnw
+week-3/assignment/mvnw.cmd
+
+#ide
+week-3/assignment/.idea/
+week-3/assignment/.vscode/
+

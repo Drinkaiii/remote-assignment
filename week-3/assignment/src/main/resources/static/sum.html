@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="js-block1">
+        <p>計算結果</p>
+    </div>
+    <div id="js-block2">
+        <p>請輸入數字：</p>
+        <input>
+        <button>提交</button>
+        <p id="js-answer" style="display: none">計算結果</p>
+    </div>
+    <script>
+        //question-1
+        const text_1 = document.querySelector("#js-block1 p");
+        //create XMLHttpRequest object
+        const xmlhttpq = new XMLHttpRequest();
+        //send request
+        xmlhttpq.open("GET","http://localhost:3000/data?number=10")
+        xmlhttpq.send();
+        //get request
+        xmlhttpq.onreadystatechange = function () {
+            if(xmlhttpq.readyState === 4 && xmlhttpq.status === 200)
+                text_1.textContent = "1+2+...+10="+xmlhttpq.responseText;
+            else
+                text_1.textContent = "connection failed";
+        }
+
+        //question-2
+        const button = document.querySelector("#js-block2 button");
+        const inputField = document.querySelector("#js-block2 input");
+        const text_2 = document.querySelector("#js-answer");
+        //create XMLHttpRequest object
+        const xmlhttpq_2 = new XMLHttpRequest();
+        //event listening
+        button.addEventListener("click",()=>{
+            let input = inputField.value;
+            //send request
+            xmlhttpq_2.open("GET","http://localhost:3000/data?number="+input)
+            xmlhttpq_2.send();
+            //get request
+            xmlhttpq_2.onreadystatechange = function () {
+                if(xmlhttpq_2.readyState === 4 && xmlhttpq_2.status === 200){
+                    text_2.textContent = "result:"+xmlhttpq_2.responseText;
+                    text_2.style.display="block";
+                }
+                else
+                    text_2.textContent = "connection failed";
+            }
+        });
+
+    </script>
+</body>
+</html>
