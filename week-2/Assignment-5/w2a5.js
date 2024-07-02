@@ -1,19 +1,22 @@
 function binarySearchPosition(numbers, target) {
-  //過濾極端輸入
+  //filter extreme
   if (numbers.length === 0) return -1;
   if (numbers.length === 1) return numbers[0];
-  //定義前後
+  //define first and last
   let first = 0;
   let last = numbers.length - 1;
+  let mid = 0;
   //binary search
-  for (let i = 0; i < numbers.length; i++)
-    if (numbers[Math.floor((first + last) / 2)] === target)
-      return Math.floor((first + last) / 2);
-    else if (numbers[Math.floor((first + last) / 2)] < target)
-      first = Math.floor((first + last) / 2);
-    else if (numbers[Math.floor((first + last) / 2)] > target)
-      last = Math.floor((first + last) / 2);
-  //都沒有找到時回傳-1
+  for (let i = 0; i < numbers.length; i++){
+    mid = Math.floor((first + last) / 2);
+    if (numbers[mid] === target)
+      return mid;
+    else if (numbers[mid] < target)
+      first = mid;
+    else if (numbers[mid] > target)
+      last = mid;
+  }
+  //if don't have answer return -1
   return -1;
 }
 
