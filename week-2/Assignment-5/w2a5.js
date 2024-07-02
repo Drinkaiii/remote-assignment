@@ -13,7 +13,7 @@ function binarySearchPosition(numbers, target) {
       return mid;
     else if (numbers[mid] < target)
       first = mid;
-    else if (numbers[mid] > target)
+    else
       last = mid;
   }
   //if don't have answer return -1
