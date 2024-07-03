@@ -1,24 +1,24 @@
 package com.emample.assignment;
 
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import static java.lang.Integer.parseInt;
 
-//Rest模式
-//@CrossOrigin
 @RestController
 @RequestMapping
-public class testController {
-    @CrossOrigin
+public class GetDataController {
     @GetMapping("/")
     public String getHome() {
         System.out.println("getHome() request");
         return "Hello, My Server!";
     }
     @GetMapping("/data")
-    public String getData(@RequestParam String number) {
+    public String getData(@RequestParam(required = false) String number) {
         System.out.println("getData() request");
-        if(number=="")
+        if(number == null)
             return "Lack of Parameter";
         if(!number.matches("[+-]?\\d*(\\.\\d+)?"))
             return "Wrong Parameter";
