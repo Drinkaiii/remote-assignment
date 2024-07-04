@@ -18,10 +18,14 @@ public class GetDataController {
     @GetMapping("/data")
     public String getData(@RequestParam(required = false) String number) {
         System.out.println("getData() request");
-        if(number == null)
-            return "Lack of Parameter";
-        if(!number.matches("[+-]?\\d*(\\.\\d+)?"))
+        try {
+            if (number == null)
+                return "Lack of Parameter";
+            if (!number.matches("[+-]?\\d*(\\.\\d+)?"))
+                return "Wrong Parameter";
+            return Integer.toString(parseInt(number) * (parseInt(number) + 1) / 2);
+        }catch (NumberFormatException e) {
             return "Wrong Parameter";
-        return Integer.toString(parseInt(number)*(parseInt(number)+1) / 2);
+        }
     }
 }
