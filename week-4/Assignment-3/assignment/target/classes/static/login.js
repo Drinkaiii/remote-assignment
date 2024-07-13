@@ -34,7 +34,7 @@ buttonLogin.addEventListener("click", () => {
             .then(data => {
                 resultText.innerText = data;
                 if (data === "Login successful")
-                    window.location.href = "memberPage";
+                    window.location.href = "/memberPage";
             });
     } else
         resultText.innerText = "Please enter complete infomation";

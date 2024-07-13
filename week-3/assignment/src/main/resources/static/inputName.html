@@ -22,13 +22,14 @@
         xhttp.onreadystatechange = function () {
             if(xhttp.readyState === 4 && xhttp.status === 200){
                 par.textContent="connection succeed";
+                //switch to myName
                 window.location.href = "http://localhost:3000/myName";
             }
             else if (xhttp.status === 500)
                 par.textContent="Internal Server Error (500)";
             else
                 par.textContent = "connection failed";
-        }
+        };
     </script>
 </body>
 </html>

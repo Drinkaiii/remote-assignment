@@ -8,12 +8,12 @@ public class FrontEndController {
 
     @GetMapping("/index")
     public String homepage() {
-        return "index";
+        return "index.html";
     }
 
     @GetMapping("/memberPage")
     public String memberPage() {
-        return "memberPage";
+        return "member.html";
     }
 
 }
